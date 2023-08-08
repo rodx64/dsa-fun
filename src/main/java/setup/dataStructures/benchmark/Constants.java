@@ -1,7 +1,7 @@
-package setup;
+package setup.dataStructures.benchmark;
 
-import static setup.dataStructures.ConsoleColors.*;
-import static setup.dataStructures.ConsoleColors.RESET;
+import static setup.dataStructures.benchmark.ConsoleColors.*;
+import static setup.dataStructures.benchmark.ConsoleColors.RESET;
 
 public abstract class Constants {
 
@@ -11,5 +11,6 @@ public abstract class Constants {
     public static final String MESSAGE_READING_COLOR = CYAN_BRIGHT + "%s -> " + BLUE_BRIGHT + "(%s)" + WHITE_BRIGHT + " : %s ns" + RESET;
     public static final String MESSAGE_REMOVING_COLOR = RED_BRIGHT + "%s -> " + BLUE_BRIGHT + "(%s)" + WHITE_BRIGHT + " : %s ns" + RESET;
     public static final String MESSAGE_CONTAINS_COLOR = WHITE + "%s -> " + BLUE_BRIGHT + "(%s)" + WHITE_BRIGHT + " : %s ns" + RESET;
+    public static final String MESSAGE_NEXT_COLOR = PURPLE_BRIGHT + "%s -> " + BLUE_BRIGHT + "(%s)" + WHITE_BRIGHT + " : %s ns" + RESET;
 
 }

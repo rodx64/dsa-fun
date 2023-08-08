@@ -1,8 +1,8 @@
-package setup.dataStructures.response;
+package setup.dataStructures.benchmark.response;
 
 import java.util.*;
 
-import static setup.Constants.MAX_SIZE;
+import static setup.dataStructures.benchmark.Constants.MAX_SIZE;
 
 public class ResponseMap extends Response {
 
@@ -16,7 +16,7 @@ public class ResponseMap extends Response {
             map.put(i, "Test" + i);
         }
         endTime = System.nanoTime();
-        duration = (endTime - startTime) / 1000;
+        duration = (endTime - startTime);
         insertMap.put(map.getClass().getSimpleName(), duration);
     }
 
@@ -26,7 +26,7 @@ public class ResponseMap extends Response {
             map.get(i);
         }
         endTime = System.nanoTime();
-        duration = (endTime - startTime) / 1000;
+        duration = (endTime - startTime);
         readMap.put(map.getClass().getSimpleName(), duration);
     }
 
@@ -36,7 +36,7 @@ public class ResponseMap extends Response {
             map.remove(i);
         }
         endTime = System.nanoTime();
-        duration = (endTime - startTime) / 1000;
+        duration = (endTime - startTime);
         deleteMap.put(map.getClass().getSimpleName(), duration);
     }
 
@@ -44,7 +44,7 @@ public class ResponseMap extends Response {
         startTime = System.nanoTime();
         map.containsKey(MAX_SIZE / 2);
         endTime = System.nanoTime();
-        duration = (endTime - startTime) / 1000;
+        duration = (endTime - startTime);
         containsMap.put(map.getClass().getSimpleName(), duration);
     }
 

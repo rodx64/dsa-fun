@@ -1,15 +1,16 @@
-package dataStructures.tests;
+package dataStructures.benchmark.tests;
 
 import org.junit.jupiter.api.*;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static setup.Constants.*;
-import static setup.dataStructures.ConsoleColors.*;
-import static setup.dataStructures.tests.BigOFunctionsMap.*;
+import static setup.dataStructures.benchmark.Constants.*;
+import static setup.dataStructures.benchmark.ConsoleColors.*;
+import static setup.dataStructures.benchmark.tests.BigOFunctionsList.removingLastMap;
+import static setup.dataStructures.benchmark.tests.BigOFunctionsMap.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class BigOFunctionsMapTest {
@@ -28,6 +29,11 @@ class BigOFunctionsMapTest {
         printWelcome();
         printFunctions();
         printFaster();
+    }
+
+    @AfterAll
+    static void cleaningUp(){
+        clear();
     }
 
     private static void printWelcome() {
@@ -49,19 +55,14 @@ class BigOFunctionsMapTest {
     }
 
     @Test
-    @DisplayName("Putting - Validate that LinkedHashMap is Faster")
-    void whenPuttingInMap_shouldValidateThatLinkedHashMapIsFaster(){
-        assertEquals(LinkedHashMap.class.getSimpleName(), getFaster(addingMap).getKey());
-    }
-    @Test
     @DisplayName("Reading - Validate that LinkedHashMap is Faster")
     void whenReadingInMap_shouldValidateThatLinkedHashMapIsFaster(){
         assertEquals(LinkedHashMap.class.getSimpleName(), getFaster(gettingMap).getKey());
     }
     @Test
-    @DisplayName("Removing - Validate that HashMap is Faster")
-    void whenRemovingInMap_shouldValidateThatHashMapIsFaster(){
-        assertEquals(HashMap.class.getSimpleName(), getFaster(removingMap).getKey());
+    @DisplayName("Removing - Validate that TreeMap is Slower than HashMap/LinkedHashMap")
+    void whenRemovingInMap_shouldValidateThatTreeMapIsSlower(){
+        assertEquals(TreeMap.class.getSimpleName(), getSlower(removingMap).getKey());
     }
 
     @Test
@@ -70,4 +71,10 @@ class BigOFunctionsMapTest {
         assertEquals(LinkedHashMap.class.getSimpleName(), getFaster(containsMap).getKey());
     }
 
+    private static void clear() {
+        addingMap.clear();
+        gettingMap.clear();
+        containsMap.clear();
+        removingMap.clear();
+    }
 }

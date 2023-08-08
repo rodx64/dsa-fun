@@ -1,6 +1,6 @@
-package setup.dataStructures.tests;
+package setup.dataStructures.benchmark.tests;
 
-import setup.dataStructures.response.ResponseList;
+import setup.dataStructures.benchmark.response.ResponseList;
 
 import java.util.Map;
 
@@ -10,6 +10,11 @@ public class BigOFunctionsList extends ResponseList {
         putOnAddList(arrayList);
         putOnAddList(linkedList);
         return insertMap;
+    }
+    public static Map<Object, Long> addingFirstMap(){
+        putOnFirstPositionList(arrayList);
+        putOnFirstPositionList(linkedList);
+        return insertFirstMap;
     }
     public static Map<Object, Long> gettingMap(){
         putOnGetList(arrayList);

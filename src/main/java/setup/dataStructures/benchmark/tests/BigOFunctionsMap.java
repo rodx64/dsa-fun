@@ -1,8 +1,8 @@
-package setup.dataStructures.tests;
+package setup.dataStructures.benchmark.tests;
 
-import setup.dataStructures.response.ResponseMap;
+import setup.dataStructures.benchmark.response.ResponseMap;
 
-import java.util.*;
+import java.util.Map;
 
 public class BigOFunctionsMap extends ResponseMap {
 

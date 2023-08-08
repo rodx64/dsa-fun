@@ -1,4 +1,4 @@
-package setup.dataStructures.response;
+package setup.dataStructures.benchmark.response;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -9,12 +9,14 @@ public abstract class Response {
     protected static long endTime = 0;
     protected static long duration = 0;
     protected final static Map<Object, Long> insertMap = new HashMap<>();
+    protected final static Map<Object, Long> insertFirstMap = new HashMap<>();
     protected final static Map<Object, Long> readMap = new HashMap<>();
     protected final static Map<Object, Long> deleteMap = new HashMap<>();
     protected final static Map<Object, Long> deleteFirstMap = new HashMap<>();
     protected final static Map<Object, Long> deleteLastMap = new HashMap<>();
     protected final static Map<Object, Long> deleteMiddleMap = new HashMap<>();
     protected final static Map<Object, Long> containsMap = new HashMap<>();
+    protected final static Map<Object, Long> nextMap = new HashMap<>();
 
     public static Map.Entry<Object, Long> getFaster(Map<Object, Long> map) {
         return Collections.min(map.entrySet(), Map.Entry.comparingByValue());

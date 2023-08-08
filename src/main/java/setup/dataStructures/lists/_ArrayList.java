@@ -1,4 +1,4 @@
-package setup.dataStructures.Lists;
+package setup.dataStructures.lists;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,21 +18,23 @@ public class _ArrayList {
         arrList.add(4); // O(1)
         System.out.println(arrList);
 
-        // Removendo o último da lista, pois não necessita reposicionar indices.
+        // Removing the last one from the list, as it is not necessary to reposition indexes.
         arrList.remove(4); // O(1)
         System.out.println(arrList);
 
-        // Removendo o primeiro de uma lista, deve-se reposicionar os indices dos demais.
-        // Assim, tocando em cada um deles, temos O(n)
+
+        // Removing the first one from a list, you must reposition the indexes of the others.
+        // Touching each one of them, we have O(n)
         arrList.remove(0); // O(n)
         System.out.println(arrList);
 
-        // Adicionando o primeiro de uma lista, deve-se reposicionar os indices dos demais.
-        // Assim, tocando em cada um deles, também temos O(n)
+        // Adding the first one to a list, you must reposition the indexes of the others.
+        // Touching each of them, we also have O(n)
         arrList.add(0, 11);
         System.out.println(arrList);
 
-        // Buscar deve-se tocar todos os items
+
+        // Contains must touch all items to find the one
         System.out.println(arrList.contains(11)); // O(n)
         System.out.println(arrList);
     }

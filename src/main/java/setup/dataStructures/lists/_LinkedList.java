@@ -1,4 +1,4 @@
-package setup.dataStructures.Lists;
+package setup.dataStructures.lists;
 
 
 import lombok.AllArgsConstructor;
@@ -6,8 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-// Simplificando a estrutura de LinkedList
-// Ideia da estrutura genérica (resources/structure/linked-list-structure-idea.txt)
+// Simplifying the structure of LinkedList
+// Generic structure idea (resources/structure/linked-list-structure-idea.txt)
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -15,10 +15,9 @@ import lombok.Setter;
 public class _LinkedList {
 
     /**
-     *  Detalhes:
-     *      Linked Lists não tem espaço sequencial na memória, por isso não possuem indices.
-     *      Elas possuem HEAD e TAIL, e entre estes os demais dados espalhados na memória apontam um ao outro (ponteiro)
-     *
+     *  Details:
+     *  - Linked Lists don't have sequential space in memory, so they don't have indexes.
+     *  - They have HEAD and TAIL, and between these the other data scattered in memory point to each other (pointer)
      */
 
     private Node head;
@@ -57,7 +56,7 @@ public class _LinkedList {
     public void append(int value){
         Node newNode = new Node(value);
 
-        // Se o comprimento é zero, o novo node será unico e terá head e tail nele próprio
+        // If the length is zero, the new node will be unique and will have a Head and Tail in it's own
         if(length == 0) {
             head = newNode;
             tail = newNode;
@@ -71,22 +70,22 @@ public class _LinkedList {
     public Node removeLast(){
         if(length == 0) return null;
 
-        // Iniciamos duas variaveis de apoio para nos movimentar pela lista
+        // We initialize two support variables to move through the list
         Node tmp = head;
         Node prev = head;
 
-        // O valor anterior de tmp ficara armazenado em prev
-        // Tmp se moverá para frente enquanto existir next
+        // The previous value of tmp will be stored in prev
+        // Tmp will move forward as long as next exists
         while(tmp.next != null){
             prev = tmp;
             tmp = tmp.next;
         }
 
-        // Chegando ao final da lista, o novo valor de tail é o que esta armazenado em prev
+        // Coming to the end of the list, the new tail value is what is stored in prev
+        // And next must be set to null
         tail = prev;
-
-        // Já next deve ser setado como null
         tail.next = null;
+
         length--;
 
         if(length == 0){

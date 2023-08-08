@@ -1,10 +1,10 @@
-package setup.dataStructures.response;
+package setup.dataStructures.benchmark.response;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import static setup.Constants.MAX_SIZE;
+import static setup.dataStructures.benchmark.Constants.MAX_SIZE;
 
 public class ResponseList extends Response {
 
@@ -21,9 +21,17 @@ public class ResponseList extends Response {
         insertMap.put(list.getClass().getSimpleName(), duration);
     }
 
+    protected static void putOnFirstPositionList(List<Integer> list){
+        startTime = System.nanoTime();
+        list.add(0, MAX_SIZE + 1);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime);
+        insertFirstMap.put(list.getClass().getSimpleName(), duration);
+    }
+
     protected static void putOnGetList(List<Integer> list){
         startTime = System.nanoTime();
-        for (int i = 0; i < MAX_SIZE; i++) {
+        for (int i = 0; i < list.size(); i++) {
             list.get(i);
         }
         endTime = System.nanoTime();
