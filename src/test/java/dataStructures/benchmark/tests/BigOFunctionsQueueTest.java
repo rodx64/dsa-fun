@@ -65,12 +65,6 @@ class BigOFunctionsQueueTest {
 
     @Test
     @DisplayName("Removing - Validate that PriorityQueue is Faster")
-    void whenRemovingQueue_shouldValidateThatPriorityQueueIsFaster(){
-        assertEquals(PriorityQueue.class.getSimpleName(), getFaster(removingMap).getKey());
-    }
-
-    @Test
-    @DisplayName("Removing - Validate that PriorityQueue is Faster")
     void whenRemovingFirstQueue_shouldValidateThatPriorityQueueIsFaster(){
         assertEquals(PriorityQueue.class.getSimpleName(), getFaster(removingHeadMap).getKey());
     }

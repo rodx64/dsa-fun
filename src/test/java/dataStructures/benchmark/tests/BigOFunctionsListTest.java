@@ -92,10 +92,10 @@ class BigOFunctionsListTest {
     }
 
     private static void clear() {
-//        prependingMap.clear();
-//        gettingMap.clear();
-//        removingFirstMap.clear();
-//        removingMiddleMap.clear();
-//        removingLastMap().clear();
+        prependingMap.clear();
+        gettingMap.clear();
+        removingFirstMap.clear();
+        removingMiddleMap.clear();
+        removingLastMap().clear();
     }
 }
