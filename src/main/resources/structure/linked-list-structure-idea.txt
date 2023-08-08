@@ -1,0 +1,25 @@
+# Ideia genérica de uma estrutura de LinkedList
+
+# dado {11, 3, 23, 7, 4}
+
+"nodeA (head)": {
+  "value": 11,
+  "prev": null,
+  "next": "nodeB": {
+              "value": 3,
+              "prev": nodeA,
+              "next": "nodeC": {
+                          "value": 23,
+                          "prev": nodeB,
+                          "next": "nodeD": {
+                                      "value": 7,
+                                      "prev": nodeC,
+                                      "next": "nodeE (tail)": {
+                                                  "value": 4,
+                                                  "prev": nodeD,
+                                                  "next": null
+                                      }
+                          } 
+              }
+  }
+}
