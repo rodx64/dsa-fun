@@ -178,9 +178,24 @@ public class _LinkedList {
         Node after = tmp.next;
 
         for (int i = 0; i < length; i++) {
+            // moving After through nodes
+            // (before) -> (tmp) -> (after*)
             after = tmp.next;
+
+            // turning arrows
+            // from: (before) -> (tmp) -> (after) -> ...
+            // to:   (before) <- (tmp) (after) -> ...
+            // * creates a gap between tmp/after
             tmp.next = before;
+
+            // moving Before through nodes
+            // from:   (before) <- (tmp) (after) -> ...
+            // to:     null <- (tmp | before*) (after) -> ...
             before = tmp;
+
+            // moving tmp through nodes
+            // from:   null <- (tmp | before*) (after) -> ...
+            // to:     null <- (before) (after | tmp*) -> ...
             tmp = after;
         }
 

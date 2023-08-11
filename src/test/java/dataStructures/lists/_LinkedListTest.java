@@ -159,21 +159,22 @@ class _LinkedListTest {
 
     @Test
     void validateMyReverse(){
-        _LinkedList linkedList = new _LinkedList(12);
-        linkedList.append(88);
-        linkedList.append(7);
-        linkedList.append(32);
-        assertEquals(12, linkedList.get(0).getValue());
-        assertEquals(88, linkedList.get(1).getValue());
-        assertEquals(7 , linkedList.get(2).getValue());
-        assertEquals(32, linkedList.get(3).getValue());
+        _LinkedList linkedList = new _LinkedList(1);
+        linkedList.append(2);
+        linkedList.append(3);
+        linkedList.append(4);
+
+        assertEquals(1, linkedList.get(0).getValue());
+        assertEquals(2, linkedList.get(1).getValue());
+        assertEquals(3 , linkedList.get(2).getValue());
+        assertEquals(4, linkedList.get(3).getValue());
 
 
         linkedList.reverse();
-        assertEquals(32, linkedList.get(0).getValue());
-        assertEquals(7 , linkedList.get(1).getValue());
-        assertEquals(88, linkedList.get(2).getValue());
-        assertEquals(12, linkedList.get(3).getValue());
+        assertEquals(4, linkedList.get(0).getValue());
+        assertEquals(3 , linkedList.get(1).getValue());
+        assertEquals(2, linkedList.get(2).getValue());
+        assertEquals(1, linkedList.get(3).getValue());
         assertNull(linkedList.get(4));
     }
 }
