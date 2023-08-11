@@ -1,4 +1,4 @@
-package dataStructures.lists;
+package setup.dataStructures.lists;
 
 import org.junit.jupiter.api.Test;
 import setup.dataStructures.lists._LinkedList;
