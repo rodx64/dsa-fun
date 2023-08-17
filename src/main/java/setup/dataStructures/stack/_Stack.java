@@ -1,4 +1,4 @@
-package setup.dataStructures.lists;
+package setup.dataStructures.stack;
 
 
 import lombok.AllArgsConstructor;
