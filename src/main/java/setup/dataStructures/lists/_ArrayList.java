@@ -33,7 +33,6 @@ public class _ArrayList {
         arrList.add(0, 11);
         System.out.println(arrList);
 
-
         // Contains must touch all items to find the one
         System.out.println(arrList.contains(11)); // O(n)
         System.out.println(arrList);
