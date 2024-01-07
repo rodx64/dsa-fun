@@ -10,7 +10,8 @@ public abstract class Response {
     protected static long duration = 0;
     protected final static Map<Object, Long> insertMap = new HashMap<>();
     protected final static Map<Object, Long> insertFirstMap = new HashMap<>();
-    protected final static Map<Object, Long> readMap = new HashMap<>();
+    protected final static Map<Object, Long> readMapByIndex = new HashMap<>();
+    protected final static Map<Object, Long> readMapByValue = new HashMap<>();
     protected final static Map<Object, Long> deleteMap = new HashMap<>();
     protected final static Map<Object, Long> deleteFirstMap = new HashMap<>();
     protected final static Map<Object, Long> deleteLastMap = new HashMap<>();

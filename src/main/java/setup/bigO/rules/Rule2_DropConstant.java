@@ -16,7 +16,8 @@ public class Rule2_DropConstant {
 
     /**
      *  Neste caso o Big O poderia ser considerado: O(N + N) = O(2N)
-     *  Mas na prática, retira-se as constantes e mantem somente o valor de N
+     *  Mas na prática, contabiliza-se um unico array como a soma dos dois arrays e retiram-se as constantes
+     *
      *  Ou seja, O(N)
      */
     private static void print(String[] arr) {

@@ -5,7 +5,7 @@ import static setup.dataStructures.benchmark.ConsoleColors.RESET;
 
 public abstract class Constants {
 
-    public static final int MAX_SIZE = 100000;
+    public static final int MAX_SIZE = 600000;
     public static final String MESSAGE_FASTER_COLOR = GREEN_BRIGHT + "Faster %s -> " + BLUE_BRIGHT + "(%s)" + WHITE_BRIGHT + " : %s ns" + RESET;
     public static final String MESSAGE_ADDING_COLOR = YELLOW_BRIGHT + "%s -> " + BLUE_BRIGHT + "(%s)" + WHITE_BRIGHT + " : %s ns" + RESET;
     public static final String MESSAGE_READING_COLOR = CYAN_BRIGHT + "%s -> " + BLUE_BRIGHT + "(%s)" + WHITE_BRIGHT + " : %s ns" + RESET;

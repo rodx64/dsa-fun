@@ -29,14 +29,23 @@ public class ResponseList extends Response {
         insertFirstMap.put(list.getClass().getSimpleName(), duration);
     }
 
+    /**
+     *  If you look in the worst case (MAX_SIZE), both lists could be faster. Because both will need to touch all
+     */
     protected static void putOnGetList(List<Integer> list){
         startTime = System.nanoTime();
-        for (int i = 0; i < list.size(); i++) {
-            list.get(i);
-        }
+        list.get(MAX_SIZE / 4);
         endTime = System.nanoTime();
         duration = (endTime - startTime);
-        readMap.put(list.getClass().getSimpleName(), duration);
+        readMapByIndex.put(list.getClass().getSimpleName(), duration);
+    }
+
+    protected static void putOnGetListByValue(List<Integer> list){
+        startTime = System.nanoTime();
+        list.contains(MAX_SIZE / 4);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime);
+        readMapByValue.put(list.getClass().getSimpleName(), duration);
     }
 
    protected static void putOnRemoveFirstList(List<Integer> list){

@@ -16,11 +16,17 @@ public class BigOFunctionsList extends ResponseList {
         putOnFirstPositionList(linkedList);
         return insertFirstMap;
     }
-    public static Map<Object, Long> gettingMap(){
+    public static Map<Object, Long> lookingByIndex(){
         putOnGetList(arrayList);
         putOnGetList(linkedList);
-        return readMap;
+        return readMapByIndex;
     }
+    public static Map<Object, Long> lookingByValue(){
+        putOnGetListByValue(arrayList);
+        putOnGetListByValue(linkedList);
+        return readMapByValue;
+    }
+
     public static Map<Object, Long> removingFirstMap(){
         putOnRemoveFirstList(arrayList);
         putOnRemoveFirstList(linkedList);

@@ -1,0 +1,6 @@
+"Generic idea of a Node"
+
+"node": {
+    "value": 1,
+    "next": null
+}

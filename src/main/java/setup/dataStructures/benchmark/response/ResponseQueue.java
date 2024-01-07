@@ -22,7 +22,7 @@ public class ResponseQueue extends Response {
         queue.peek();
         endTime = System.nanoTime();
         duration = (endTime - startTime);
-        readMap.put(queue.getClass().getSimpleName(), duration);
+        readMapByIndex.put(queue.getClass().getSimpleName(), duration);
     }
 
     protected static void pollMapOn(Queue<Integer> queue) {

@@ -16,7 +16,7 @@ public class BigOFunctionsMap extends ResponseMap {
         gettingMapOn(hashMap);
         gettingMapOn(linkedHashMap);
         gettingMapOn(treeMap);
-        return readMap;
+        return readMapByIndex;
     }
     public static Map<Object, Long> removingMap() {
         removingMapOn(hashMap);

@@ -40,6 +40,7 @@ class _BinarySearchTreeTest {
 
         assertNull(bst.root.left);
         assertNotNull(bst.root.right);
+        assertEquals(bst.root.right.value, 11);
     }
 
     @Test
@@ -55,6 +56,30 @@ class _BinarySearchTreeTest {
         assertNotNull(bst.root.left);
     }
 
+    @Test
+    void givenFilledBinarySearchTree_whenSearchAValidValue_thenReturnTrue(){
+        _BinarySearchTree bst = new _BinarySearchTree();
+        bst.insert(7);
+        bst.insert(9);
+        bst.insert(15);
+        bst.insert(13);
+        bst.insert(11);
+        bst.insert(8);
+        bst.insert(17);
+        assertTrue(bst.contains(11));
+    }
 
+    @Test
+    void givenFilledBinarySearchTree_whenSearchAnInvalidValue_thenReturnTrue(){
+        _BinarySearchTree bst = new _BinarySearchTree();
+        bst.insert(7);
+        bst.insert(9);
+        bst.insert(15);
+        bst.insert(13);
+        bst.insert(11);
+        bst.insert(8);
+        bst.insert(17);
+        assertFalse(bst.contains(14));
+    }
 
 }

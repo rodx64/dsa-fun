@@ -1,13 +1,7 @@
 package setup.dataStructures.tree;
 
-
 import lombok.*;
 
-
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
 public class _BinarySearchTree {
 
     /**
@@ -24,8 +18,12 @@ public class _BinarySearchTree {
 
     Node root;
 
-    public boolean insert(int i) {
-        Node newNode = new Node(i);
+    public _BinarySearchTree() {
+        root = null;
+    }
+
+    public boolean insert(int value) {
+        Node newNode = new Node(value);
 
         if(root == null){
             root = newNode;
@@ -52,22 +50,63 @@ public class _BinarySearchTree {
                 temp = temp.right;
             }
         }
-
     }
 
+    public boolean contains(int value){
+        Node tmp = root;
 
+        while(tmp != null){
+            if(value < tmp.value){
+                tmp = tmp.left;
+            } else if (value > tmp.value) {
+                tmp = tmp.right;
+            } else{
+                return true;
+            }
+        }
 
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Getter
-    @Setter
-    public static class Node {
+        return false;
+    }
+
+    public Node getRoot() {
+        return root;
+    }
+
+    public void setRoot(Node root) {
+        this.root = root;
+    }
+
+    public class Node {
         int value;
         Node left;
         Node right;
 
         Node(int value){
             this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public void setValue(int value) {
+            this.value = value;
+        }
+
+        public Node getLeft() {
+            return left;
+        }
+
+        public void setLeft(Node left) {
+            this.left = left;
+        }
+
+        public Node getRight() {
+            return right;
+        }
+
+        public void setRight(Node right) {
+            this.right = right;
         }
     }
 

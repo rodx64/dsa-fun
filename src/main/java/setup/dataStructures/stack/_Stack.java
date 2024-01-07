@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Stack;
+
 @Getter
 @Setter
 public class _Stack {
@@ -47,11 +49,9 @@ public class _Stack {
     public Node pop() {
         if(height == 0) return null;
 
-        Node tmp = top;
         top = top.next;
-        tmp.next = null;
         height--;
-        return tmp;
+        return top;
     }
 
     @AllArgsConstructor

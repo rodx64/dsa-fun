@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Queue;
+
 @Getter
 @Setter
 public class _Queue {
@@ -49,17 +51,15 @@ public class _Queue {
     public Node dequeue() {
         if(length == 0) return null;
 
-        Node tmp = first;
         if(length == 1) {
             first = null;
             last = null;
         } else {
             first = first.next;
-            tmp.next = null;
         }
 
         length--;
-        return tmp;
+        return first;
     }
 
     @AllArgsConstructor

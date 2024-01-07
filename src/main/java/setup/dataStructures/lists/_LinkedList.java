@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.LinkedList;
+
 // Simplifying the structure of LinkedList
 // Generic structure idea (resources/structure/linked-list-structure-idea.txt)
 @AllArgsConstructor

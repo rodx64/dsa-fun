@@ -14,7 +14,7 @@ public abstract class BigOFunctionsQueue extends ResponseQueue {
     public static Map<Object, Long> readFirst() {
         peekMapOn(arrayDeque);
         peekMapOn(priorityQueue);
-        return readMap;
+        return readMapByIndex;
     }
 
     public static Map<Object, Long> removingHeadMap() {

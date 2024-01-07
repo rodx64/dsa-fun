@@ -27,7 +27,7 @@ public class ResponseMap extends Response {
         }
         endTime = System.nanoTime();
         duration = (endTime - startTime);
-        readMap.put(map.getClass().getSimpleName(), duration);
+        readMapByIndex.put(map.getClass().getSimpleName(), duration);
     }
 
     protected static void removingMapOn(Map<Integer, String> map) {
