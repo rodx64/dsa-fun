@@ -35,6 +35,13 @@ ArrayDeque              | O(1)     | O(1) | O(1)     |  O(n)  | Linked List| Res
 PriorityQueue           | O(log n) | O(1) | O(log n) |  O(n)  | Priority Heap| Priority + Sorted
 
 
+## TREES - O(log n)
+Tree                        | Lookup    | Insert    | Remove    | Data Structure | Advantage
+----------------------------|-----------|-----------|-----------|----------------|-----------
+Custom Binary Search Tree   | O(log n)  | O(log n)  | O(log n)  |      -         | Faster than Lists to Lookup
+
+
+
 ## Pros and Cons
 Types                   | Pros                 | Cons      | Ref |
 ------------------------|----------------------|-----------|-----|

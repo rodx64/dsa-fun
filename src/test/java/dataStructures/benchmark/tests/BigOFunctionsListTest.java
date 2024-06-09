@@ -6,17 +6,19 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Map;
 
+import static benchmark.response.Response.getFaster;
+import static benchmark.tests.BigOFunctionsList.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static setup.dataStructures.benchmark.Constants.*;
-import static setup.dataStructures.benchmark.ConsoleColors.*;
-import static setup.dataStructures.benchmark.tests.BigOFunctionsList.*;
+import static benchmark.Constants.*;
+import static benchmark.ConsoleColors.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class BigOFunctionsListTest {
 
     static Map<Object, Long> appendingMap;
     static Map<Object, Long> prependingMap;
-    static Map<Object, Long> gettingMap;
+    static Map<Object, Long> lookingMapByIndex;
+    static Map<Object, Long> lookingMapByValue;
     static Map<Object, Long> removingFirstMap;
     static Map<Object, Long> removingLastMap;
     static Map<Object, Long> removingMiddleMap;
@@ -25,7 +27,8 @@ class BigOFunctionsListTest {
     static void setUp(){
         appendingMap = addingMap();
         prependingMap = addingFirstMap();
-        gettingMap = gettingMap();
+        lookingMapByIndex = lookingByIndex();
+        lookingMapByValue = lookingByValue();
         removingFirstMap = removingFirstMap();
         removingMiddleMap = removingMiddleMap();
         removingLastMap = removingLastMap();
@@ -44,18 +47,20 @@ class BigOFunctionsListTest {
     }
 
     private static void printFunctions() {
-        appendingMap.forEach((key, value) -> System.out.printf((MESSAGE_ADDING_COLOR) + "%n", "Adding", key, value));
-        prependingMap.forEach((key, value) -> System.out.printf((MESSAGE_ADDING_COLOR) + "%n", "Adding First", key, value));
-        gettingMap.forEach((key, value) -> System.out.printf((MESSAGE_READING_COLOR) + "%n", "Getting", key, value));
+        appendingMap.forEach((key, value) -> System.out.printf((MESSAGE_ADDING_COLOR) + "%n", "Appending", key, value));
+        prependingMap.forEach((key, value) -> System.out.printf((MESSAGE_ADDING_COLOR) + "%n", "Prepending", key, value));
+        lookingMapByIndex.forEach((key, value) -> System.out.printf((MESSAGE_READING_COLOR) + "%n", "Looking by Index", key, value));
+        lookingMapByValue.forEach((key, value) -> System.out.printf((MESSAGE_READING_COLOR) + "%n", "Looking by Value", key, value));
         removingFirstMap.forEach((key, value) -> System.out.printf((MESSAGE_REMOVING_COLOR) + "%n", "Removing::First", key, value));
         removingMiddleMap.forEach((key, value) -> System.out.printf((MESSAGE_REMOVING_COLOR) + "%n", "Removing::Middle", key, value));
         removingLastMap.forEach((key, value) -> System.out.printf((MESSAGE_REMOVING_COLOR) + "%n", "Removing::Last", key, value));
     }
 
     private static void printFaster(){
-        System.out.printf((MESSAGE_FASTER_COLOR) + "%n", "Adding", getFaster(appendingMap).getKey(), getFaster(appendingMap).getValue());
-        System.out.printf((MESSAGE_FASTER_COLOR) + "%n", "Adding First", getFaster(prependingMap).getKey(), getFaster(prependingMap).getValue());
-        System.out.printf((MESSAGE_FASTER_COLOR) + "%n", "Reading", getFaster(gettingMap).getKey(), getFaster(gettingMap).getValue());
+        System.out.printf((MESSAGE_FASTER_COLOR) + "%n", "Appending", getFaster(appendingMap).getKey(), getFaster(appendingMap).getValue());
+        System.out.printf((MESSAGE_FASTER_COLOR) + "%n", "Prepending", getFaster(prependingMap).getKey(), getFaster(prependingMap).getValue());
+        System.out.printf((MESSAGE_FASTER_COLOR) + "%n", "Looking by Index", getFaster(lookingMapByIndex).getKey(), getFaster(lookingMapByIndex).getValue());
+        System.out.printf((MESSAGE_FASTER_COLOR) + "%n", "Looking by Value", getFaster(lookingMapByValue).getKey(), getFaster(lookingMapByValue).getValue());
         System.out.printf((MESSAGE_FASTER_COLOR) + "%n", "Removing First", getFaster(removingFirstMap).getKey(), getFaster(removingFirstMap).getValue());
         System.out.printf((MESSAGE_FASTER_COLOR) + "%n", "Removing Middle", getFaster(removingMiddleMap).getKey(), getFaster(removingMiddleMap).getValue());
         System.out.printf((MESSAGE_FASTER_COLOR) + "%n", "Removing Last", getFaster(removingLastMap).getKey(), getFaster(removingLastMap).getValue());
@@ -68,9 +73,9 @@ class BigOFunctionsListTest {
     }
 
     @Test
-    @DisplayName("Getting - Validate that ArrayList is Faster")
+    @DisplayName("Looking By Index - Validate that ArrayList is Faster")
     void whenGettingInList_shouldValidateThatArrayListIsFaster(){
-        assertEquals(ArrayList.class.getSimpleName(), getFaster(gettingMap).getKey());
+        assertEquals(ArrayList.class.getSimpleName(), getFaster(lookingMapByIndex).getKey());
     }
 
     @Test
@@ -93,9 +98,13 @@ class BigOFunctionsListTest {
 
     private static void clear() {
         prependingMap.clear();
-        gettingMap.clear();
+        lookingMapByIndex.clear();
+        lookingMapByValue.clear();
         removingFirstMap.clear();
         removingMiddleMap.clear();
         removingLastMap().clear();
+        Runtime runtime = Runtime.getRuntime();
+        runtime.gc();
+
     }
 }

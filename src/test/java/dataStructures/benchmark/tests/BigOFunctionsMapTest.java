@@ -6,11 +6,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
+import static benchmark.tests.BigOFunctionsMap.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static setup.dataStructures.benchmark.Constants.*;
-import static setup.dataStructures.benchmark.ConsoleColors.*;
-import static setup.dataStructures.benchmark.tests.BigOFunctionsList.removingLastMap;
-import static setup.dataStructures.benchmark.tests.BigOFunctionsMap.*;
+import static benchmark.Constants.*;
+import static benchmark.ConsoleColors.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class BigOFunctionsMapTest {
