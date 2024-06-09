@@ -4,10 +4,10 @@ import org.junit.jupiter.api.*;
 
 import java.util.*;
 
+import static benchmark.tests.BigOFunctionsSet.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static setup.dataStructures.benchmark.Constants.*;
-import static setup.dataStructures.benchmark.ConsoleColors.*;
-import static setup.dataStructures.benchmark.tests.BigOFunctionsSet.*;
+import static benchmark.Constants.*;
+import static benchmark.ConsoleColors.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class BigOFunctionsSetTest {

@@ -1,4 +1,4 @@
-package setup.dataStructures.benchmark;
+package benchmark;
 
 public abstract class ConsoleColors {
     public static final String RESET = "\033[0m";

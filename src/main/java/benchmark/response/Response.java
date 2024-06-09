@@ -1,4 +1,4 @@
-package setup.dataStructures.benchmark.response;
+package benchmark.response;
 
 import java.util.Collections;
 import java.util.HashMap;

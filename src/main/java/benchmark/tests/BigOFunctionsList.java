@@ -1,6 +1,6 @@
-package setup.dataStructures.benchmark.tests;
+package benchmark.tests;
 
-import setup.dataStructures.benchmark.response.ResponseList;
+import benchmark.response.ResponseList;
 
 import java.util.Map;
 

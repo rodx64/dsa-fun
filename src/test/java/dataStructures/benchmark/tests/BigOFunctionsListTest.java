@@ -6,10 +6,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Map;
 
+import static benchmark.response.Response.getFaster;
+import static benchmark.tests.BigOFunctionsList.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static setup.dataStructures.benchmark.Constants.*;
-import static setup.dataStructures.benchmark.ConsoleColors.*;
-import static setup.dataStructures.benchmark.tests.BigOFunctionsList.*;
+import static benchmark.Constants.*;
+import static benchmark.ConsoleColors.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class BigOFunctionsListTest {
@@ -33,7 +34,6 @@ class BigOFunctionsListTest {
         removingLastMap = removingLastMap();
         printWelcome();
         printFunctions();
-        printFasterMessage();
         printFaster();
     }
 
@@ -44,9 +44,6 @@ class BigOFunctionsListTest {
 
     private static void printWelcome() {
         System.out.printf(WHITE_BRIGHT + "::: LIST TESTS :::" + RESET + "%n" );
-    }
-    private static void printFasterMessage() {
-        System.out.printf(WHITE_BRIGHT + "::: WHO IS FASTER ? :::" + RESET + "%n" );
     }
 
     private static void printFunctions() {

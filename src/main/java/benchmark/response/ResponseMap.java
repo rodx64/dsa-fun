@@ -1,8 +1,8 @@
-package setup.dataStructures.benchmark.response;
+package benchmark.response;
 
 import java.util.*;
 
-import static setup.dataStructures.benchmark.Constants.MAX_SIZE;
+import static benchmark.Constants.MAX_SIZE;
 
 public class ResponseMap extends Response {
 
