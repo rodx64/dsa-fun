@@ -1,6 +1,9 @@
 package dataStructures.lists;
 
-import challenges.*;
+import challenges.dsa._LinkedListChallengeFindMiddle;
+import challenges.dsa._LinkedListChallengeFindNthNodeFromEnd;
+import challenges.dsa._LinkedListChallengeHasLoop;
+import challenges.dsa._LinkedListChallengeReverseBetween;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

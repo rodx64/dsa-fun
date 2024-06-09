@@ -1,4 +1,4 @@
-package challenges;
+package challenges.dsa;
 
 // LL: Find Middle Node
 public class _LinkedListChallengeReverseBetween {

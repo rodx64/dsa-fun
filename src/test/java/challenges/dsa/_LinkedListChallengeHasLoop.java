@@ -1,23 +1,27 @@
-package challenges;
+package challenges.dsa;
 
 // LL: Find Middle Node
-public class _LinkedListChallengeFindMiddle {
+public class _LinkedListChallengeHasLoop {
 
     /**
      *
-     * If the list has an even number of nodes, the method should return the second middle node.
+     * Implement a method called hasLoop that checks whether the list contains a loop or not.
+     * If the list contains a loop, the method should return true; otherwise, it should return false.
+     *
+     * Example:
      *
      * LinkedList myList = new LinkedList(1);
      * myList.append(2);
      * myList.append(3);
      * myList.append(4);
      * myList.append(5);
-     * Node middleNode = myList.findMiddleNode();
-     * System.out.println(middleNode.value); // Output: 3
      *
-     * myList.append(6);
-     * middleNode = myList.findMiddleNode();
-     * System.out.println(middleNode.value); // Output: 4
+     * boolean result = myList.hasLoop(); // Output: false
+     *
+     * // Manually create a loop for testing purposes
+     * myList.getHead().next.next.next = myList.getHead().next;
+     *
+     * result = myList.hasLoop(); // Output: true
      *
      */
 
@@ -26,14 +30,14 @@ public class _LinkedListChallengeFindMiddle {
 
     public class Node {
         public int value;
-        Node next;
+        public Node next;
 
         Node(int value) {
             this.value = value;
         }
     }
 
-    public _LinkedListChallengeFindMiddle(int value) {
+    public _LinkedListChallengeHasLoop(int value) {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
@@ -87,19 +91,18 @@ public class _LinkedListChallengeFindMiddle {
         }
     }
 
-    public Node findMiddleNode(){
-        if(head == null) return null;
+    public boolean hasLoop(){
+        if(head == null) return false;
         Node slower = head;
         Node faster = head;
 
-        while(faster.next != null){
+        while (faster.next != null){
             slower = slower.next;
             faster = faster.next;
-            if(faster.next == null) break;
             faster = faster.next;
+            if(slower.value == faster.value) return true;
         }
-
-        return slower;
+        return false;
     }
 
 }

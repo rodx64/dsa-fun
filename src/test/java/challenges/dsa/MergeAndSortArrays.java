@@ -1,4 +1,4 @@
-package challenges;
+package challenges.dsa;
 
 import org.junit.jupiter.api.Test;
 

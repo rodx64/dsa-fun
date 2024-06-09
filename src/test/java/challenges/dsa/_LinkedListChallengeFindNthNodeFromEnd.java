@@ -1,6 +1,4 @@
-package challenges;
-
-import setup.dataStructures.lists._LinkedList;
+package challenges.dsa;
 
 // LL: Find Middle Node
 public class _LinkedListChallengeFindNthNodeFromEnd {
