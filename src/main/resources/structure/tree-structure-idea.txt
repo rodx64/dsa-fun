@@ -1,6 +1,6 @@
-# Ideia genérica de uma estrutura de Arvore
+# Three idea
 
-# dado {11, 3, 23, 7, 4}
+# given {11, 3, 23, 7, 4}
 
 "nodeA (head)": {
   "value": 11,
