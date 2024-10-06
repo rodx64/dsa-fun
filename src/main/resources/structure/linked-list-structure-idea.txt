@@ -1,0 +1,20 @@
+# LinkedList
+
+# given {11, 3, 23, 7, 4}
+
+"nodeA (head)": {
+      "value": 11,
+      "next": "nodeB": {
+                  "value": 3,
+                  "next": "nodeC": {
+                              "value": 23,
+                              "next": "nodeD": {
+                                          "value": 7,
+                                          "next": "nodeE (tail)": {
+                                                      "value": 4,
+                                                      "next": null
+                                          }
+                              }
+                  }
+      }
+}
