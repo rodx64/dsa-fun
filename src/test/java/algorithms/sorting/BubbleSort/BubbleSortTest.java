@@ -1,6 +1,5 @@
-package algorithms.sorting;
+package algorithms.sorting.BubbleSort;
 
-import algorithms.sorting.BubbleSort.BubbleSort;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

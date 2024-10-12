@@ -47,3 +47,11 @@ The aim of this module is to test data structures, the big O and ways of storing
     2. Breadth First Search (BFS)
         - [Implementation](src/main/java/algorithms/searching/BreadthFirstSearch/BreadthFirstSearch.java)
         - [Doc](src/main/java/algorithms/searching/DepthFirstSearch/DepthFirstSearch.md)
+
+- ### Sorting
+    1. Bubble Sort
+        - [Implementation](src/main/java/algorithms/sorting/BubbleSort/BubbleSort.java)
+        - [Doc](src/main/java/algorithms/sorting/BubbleSort/BubbleSort.md)
+    2. Selection Sort
+        - [Implementation](src/main/java/algorithms/sorting/SelectionSort/SelectionSort.java)
+        - [Doc](src/main/java/algorithms/sorting/SelectionSort/SelectionSort.md)
