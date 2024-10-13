@@ -1,5 +1,7 @@
-name: Test Project
 # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#push
+# https://github.com/marketplace/actions/checkout?version=v4.2.1
+
+name: Test Project
 on:
   push:
     branches: [ "test" ]
@@ -21,7 +23,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      # https://github.com/marketplace/actions/checkout?version=v4.2.1
       - name: Get the code from the repo
         uses: actions/checkout@v4.2.1
       - name: Set up JDK 11
