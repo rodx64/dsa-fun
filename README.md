@@ -55,3 +55,6 @@ The aim of this module is to test data structures, the big O and ways of storing
     2. Selection Sort
         - [Implementation](src/main/java/algorithms/sorting/SelectionSort/SelectionSort.java)
         - [Doc](src/main/java/algorithms/sorting/SelectionSort/SelectionSort.md)
+    3. Insertion Sort
+        - [Implementation](src/main/java/algorithms/sorting/InsertionSort/InsertionSort.java)
+        - [Doc](src/main/java/algorithms/sorting/InsertionSort/InsertionSort.md)
